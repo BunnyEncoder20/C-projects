@@ -4,15 +4,16 @@ CC=clang
 all: hello
 
 hello: hello.c
-	$(CC) -o hello hello.c && ./hello
+	$(CC) -o hello hello.c && ./hello && hello
 
-arr-ptr: arrays-pointers.c
-	$(CC) -o arr-ptr arrays-pointers.c && ./arr-ptr
-# test.o: test.c
-# 	$(CC) -c test.c -o test.o
+arr-ptr: arrays.c
+	$(CC) -o arr arrays.c && ./arr && rm arr
 
-strings: strings.c
-	$(CC) -o strings strings.c && ./strings
+strings: strings-pointers.c
+	$(CC) -o strings strings-pointers.c && ./strings && rm strings
+
+rev-str: reverse-string.c
+	$(CC) -o rev-str reverse-string.c && ./rev-str && rm rev-str
 
 clean-1:
 	rm hello
