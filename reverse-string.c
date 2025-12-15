@@ -11,8 +11,21 @@ void reverse1(char *str) {
   }
 }
 
+// Second attempt
+void reverse2(char *str) {
+  int length = strlen(str);
+  for (int i = 0, j = length - 1; i < j; i++, j--) {
+    char temp = str[i];
+    str[i] = str[j];
+    str[j] = temp;
+  }
+}
+
 int main(void) {
-  char str[100];
-  reverse1(str);
+  char str[100] = "Soma and Bunny went to a party on Saturday night";
+  printf("Original String: %s\n", str);
+  // reverse1(str);
+  reverse2(str);
+  printf("Reversed String: %s\n", str);
   return 0;
 }
