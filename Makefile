@@ -18,6 +18,10 @@ rev-str: reverse-string.c
 arr-ptr: array-pointer.c
 	$(CC) -o arr-ptr array-pointer.c && ./arr-ptr && rm arr-ptr
 
+grades: inputs.c
+	$(CC) -o inputs inputs.c && ./inputs && rm inputs
+
+
 clean-1:
 	rm hello
 
